@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Nurito";
+  src: url("../../assets/fonts/Nunito-Medium.ttf");
+}
+
+.comment {
+  min-width: min-content;
+  height: auto;
+  min-height: 24px;
+  padding: 12px;
+  border: 1px solid #b5cadd;
+  background-color: white;
+  border-radius: 8px 8px 8px 0px;
+  margin-bottom: 4px;
+  font-family: Nurito, Arial, Helvetica, sans-serif;
+}
+
+.comment__name {
+  color: green;
+  font-size: 12px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+.comment__review {
+  width: 100%;
+  color: black;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.comment__date {
+  text-align: right;
+  font-size: 8px;
+  font-weight: bolder;
+}
