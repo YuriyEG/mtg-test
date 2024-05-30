@@ -1,15 +1,19 @@
 import { Tuple, configureStore } from "@reduxjs/toolkit"
+import { Lang } from "../helper/getComments"
 
-const initialState = { lang: "ru", openSelect: false }
+export interface State {
+  lang: Lang
+  openSelect: boolean
+}
+
+const initialState: State = { lang: Lang.ru, openSelect: false }
 
 type Action = {
   type: string
   payload: string
 }
 
-const reducer = (state = initialState, action: Action) => {
-  console.log(state)
-  console.log(action)
+const reducer = (state: State = initialState, action: Action) => {
   if (action.type === "TGSEL") {
     return { ...state, openSelect: !state.openSelect }
   }

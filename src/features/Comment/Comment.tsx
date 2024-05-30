@@ -1,16 +1,14 @@
 import styles from "./Comment.module.css"
 
+import type ICommentComponent from "./CommentType"
+
 import { Component } from "react"
 
-class Comment extends Component {
+import getShortName from "../../helper/getShortName"
+
+class Comment extends Component<ICommentComponent> {
   render() {
     const { name, review, date } = this.props.comment
-
-    const getShortName = name => {
-      const [firstName, secondName] = name.split(" ")
-      if (secondName) return `${firstName} ${secondName[0]}.`
-      return firstName
-    }
 
     const shortName = getShortName(name)
 

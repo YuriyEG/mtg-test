@@ -1,4 +1,19 @@
-const comments = {
+interface IClient {
+  name: string
+  review: string
+  date: string
+}
+
+interface IClientMap {
+  [key: string]: IClient
+}
+
+interface IMockData {
+  ru: IClientMap
+  en: IClientMap
+}
+
+const comments: IMockData = {
   ru: {
     client_1: {
       name: "Иванова Елена",

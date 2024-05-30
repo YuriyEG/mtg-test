@@ -1,17 +1,19 @@
 import styles from "./Watch.module.css"
 import { Component } from "react"
-import getCurrentTime from "../../helper/getCurrentTime"
 
-class Watch extends Component {
-  constructor(props) {
+import getCurrentTime from "../../helper/getCurrentTime"
+import type { IWatchProps, IWatchState } from "./WatchType"
+
+class Watch extends Component<{}, IWatchState> {
+  constructor(props: IWatchProps) {
     super(props)
-    this.state = { time: 0, id: null }
+    this.state = { time: null, id: undefined }
   }
 
   componentDidMount(): void {
     const id = setInterval(() => {
       const newTime = getCurrentTime()
-      this.setState({ time: newTime })
+      this.setState({ ...this.state, time: newTime })
     }, 1000)
     this.setState({ ...this.state, id })
   }

@@ -2,23 +2,24 @@ import styles from "./LangSelect.module.css"
 import { Component } from "react"
 import { connect } from "react-redux"
 
-class LangSelect extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { state: false, open: false, lang: "ru" }
-  }
+import { Lang } from "../../helper/getComments"
+import type { ILangSelector } from "./LangSelectorType"
+import type { State } from "../../app/store"
+import type { Dispatch } from "@reduxjs/toolkit"
 
+class LangSelect extends Component<ILangSelector> {
   languageHandler = e => {
     this.props.toggleActiveSelect()
-    if (e.target.id) this.props.setLanguage(e.target.id)
+    if (e.target.id === "ru") this.props.setLanguage(Lang.ru)
+    if (e.target.id === "en") this.props.setLanguage(Lang.en)
   }
 
   render() {
     return (
       <div className={styles.select} onClick={this.languageHandler}>
-        <p className={styles.select__lang}>{this.props.lang}</p>
-        {this.props.openSelect && (
-          <ul name="lang">
+        <p className={styles.select__lang}>{this.props.state.lang}</p>
+        {this.props.state.openSelect && (
+          <ul>
             <li value="ru" id="ru" className={styles.select__option}>
               ru
             </li>
@@ -32,15 +33,15 @@ class LangSelect extends Component {
   }
 }
 
-const setLang = payload => ({ type: "LANG", payload })
+const setLang = (payload: Lang) => ({ type: "LANG", payload })
 const toggleSelect = () => ({ type: "TGSEL" })
 
-const mapStateToProps = state => {
-  return { lang: state.lang, openSelect: state.openSelect }
+const mapStateToProps = (state: State) => {
+  return { state }
 }
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
-    setLanguage: (lang: string) => {
+    setLanguage: (lang: Lang) => {
       dispatch(setLang(lang))
     },
     toggleActiveSelect: () => dispatch(toggleSelect()),
