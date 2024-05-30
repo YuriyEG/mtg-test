@@ -16,11 +16,11 @@ class Comment extends Component {
 
     return (
       <li className={styles.comment}>
-        <h3 className={styles.comment__name}>
-          <span>{shortName} </span>
-        </h3>
-        <p className={styles.comment__review}>{review}</p>
-        <p className={styles.comment__date}>{date}</p>
+        <blockquote>
+          <p className={styles.comment__review}>{review}</p>
+          <cite className={styles.comment__name}>{shortName}</cite>
+          <time className={styles.comment__date}>{date}</time>
+        </blockquote>
       </li>
     )
   }
