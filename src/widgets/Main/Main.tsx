@@ -4,7 +4,7 @@ import Comment from "../../features/Comment"
 import comments from "../../data/comments"
 
 const Main = () => {
-  const [lang, setLang] = useState("en")
+  const [lang, setLang] = useState("ru")
   const commentList = Object.entries(comments[lang]).map(node => {
     return { id: node[0], ...node[1] }
   })
