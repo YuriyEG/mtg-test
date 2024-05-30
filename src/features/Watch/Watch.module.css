@@ -1,0 +1,16 @@
+.watch {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background-color: rgba(0, 0, 0, 0.577);
+  color: white;
+  width: 80px;
+  padding: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.708);
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.watch__time {
+  color: rgb(59, 59, 59);
+}
