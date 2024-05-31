@@ -12,15 +12,28 @@ import { setLang } from "../../app/actions"
 class LangSelect extends Component<ILangSelector> {
   languageHandler = e => {
     this.props.toggleActiveSelect()
-    if (e.target.id === "ru") this.props.setLanguage("ru")
-    if (e.target.id === "en") this.props.setLanguage("en")
+    if (e.target.id) this.props.setLanguage(e.target.id)
   }
 
   render() {
     return (
       <div className={styles.select} onClick={this.languageHandler}>
-        <p className={styles.select__lang}>{this.props.state.lang}</p>
-        {this.props.state.openSelect && (
+        <div
+          className={
+            this.props.state.openSelect
+              ? styles.select__active
+              : styles.select__base
+          }
+        >
+          <p
+            className={
+              this.props.state.openSelect
+                ? styles["select__lang-unactive"]
+                : styles.select__lang
+            }
+          >
+            {this.props.state.lang}
+          </p>
           <ul>
             <li value="ru" id="ru" className={styles.select__option}>
               ru
@@ -29,7 +42,7 @@ class LangSelect extends Component<ILangSelector> {
               en
             </li>
           </ul>
-        )}
+        </div>
       </div>
     )
   }

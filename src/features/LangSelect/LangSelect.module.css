@@ -1,5 +1,5 @@
 .select {
-  background-color: rgba(255, 255, 255, 0.493);
+  background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   position: absolute;
   border: 1px solid white;
@@ -22,9 +22,34 @@
 .select__lang {
   width: 24px;
   height: 24px;
-  background-color: rgba(120, 120, 139, 0.3);
+  background-color: rgb(170, 170, 197);
   color: rgb(0, 0, 0);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-weight: bold;
+}
+
+.select__lang-unactive {
+  width: 24px;
+  height: 24px;
+  background-color: rgb(170, 170, 197);
+  color: rgba(0, 0, 0, 0.367);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  transition: color 0.2s ease-in-out;
+}
+
+.select__base {
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  transition: height 0.2s ease-in-out;
+}
+
+.select__active {
+  width: 24px;
+  height: 70px;
+  overflow: hidden;
+  transition: height 0.2s ease-in-out;
 }
