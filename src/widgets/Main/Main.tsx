@@ -2,7 +2,7 @@ import styles from "./Main.module.css"
 import { Component } from "react"
 import { connect } from "react-redux"
 
-import type IMain from "./MainTypes"
+import type IMain from "./MainType"
 import type { State } from "../../app/store"
 
 import Comment from "../../features/Comment"

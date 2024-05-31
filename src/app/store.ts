@@ -23,4 +23,6 @@ const store = configureStore({
   middleware: () => new Tuple(),
 })
 
+export type State = ReturnType<typeof store.getState>
+
 export default store

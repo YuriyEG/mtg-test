@@ -12,8 +12,7 @@ class Watch extends Component<{}, IWatchState> {
 
   componentDidMount(): void {
     const id = setInterval(() => {
-      const newTime = getCurrentTime()
-      this.setState({ ...this.state, time: newTime })
+      this.setState({ ...this.state, time: getCurrentTime() })
     }, 1000)
     this.setState({ ...this.state, id })
   }

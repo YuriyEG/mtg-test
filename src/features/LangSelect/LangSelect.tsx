@@ -2,16 +2,18 @@ import styles from "./LangSelect.module.css"
 import { Component } from "react"
 import { connect } from "react-redux"
 
-import { Lang } from "../../helper/getComments"
 import type { ILangSelector } from "./LangSelectorType"
 import type { State } from "../../app/store"
 import type { Dispatch } from "@reduxjs/toolkit"
 
+import { toggleSelect } from "../../app/actions"
+import { setLang } from "../../app/actions"
+
 class LangSelect extends Component<ILangSelector> {
   languageHandler = e => {
     this.props.toggleActiveSelect()
-    if (e.target.id === "ru") this.props.setLanguage(Lang.ru)
-    if (e.target.id === "en") this.props.setLanguage(Lang.en)
+    if (e.target.id === "ru") this.props.setLanguage("ru")
+    if (e.target.id === "en") this.props.setLanguage("en")
   }
 
   render() {
@@ -33,15 +35,12 @@ class LangSelect extends Component<ILangSelector> {
   }
 }
 
-const setLang = (payload: Lang) => ({ type: "LANG", payload })
-const toggleSelect = () => ({ type: "TGSEL" })
-
 const mapStateToProps = (state: State) => {
   return { state }
 }
 const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
-    setLanguage: (lang: Lang) => {
+    setLanguage: (lang: string) => {
       dispatch(setLang(lang))
     },
     toggleActiveSelect: () => dispatch(toggleSelect()),
