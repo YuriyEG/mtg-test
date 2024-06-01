@@ -2,7 +2,7 @@ import styles from "./LangSelect.module.css"
 import { Component } from "react"
 import { connect } from "react-redux"
 
-import type { ILangSelector } from "./LangSelectorType"
+import type { ILangSelector } from "./LangSelectType"
 import type { State } from "../../app/store"
 import type { Dispatch } from "@reduxjs/toolkit"
 
