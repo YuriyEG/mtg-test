@@ -1,27 +1,19 @@
-# vite-template-redux
+До встречи хотели бы попросить вас выполнить тестовое задание на классовых компонентах.
 
-Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Testing Library](https://github.com/testing-library/react-testing-library) to create a modern [React](https://react.dev/) app compatible with [Create React App](https://create-react-app.dev/)
+Тестовое задание. Необходимо разработать простое SPA:
 
-```sh
-npx degit reduxjs/redux-templates/packages/vite-template-redux my-app
-```
+- Блок "Header" состоит из картинки (из открытых источников), выпадающего списка языков (ru, en) и компонента "Watch" в формате "hh:mm:ss" (часы должны показывать реальное время)
+- Блок "Main" состоит из списка отзывов (данные из data.json: https://disk.yandex.ru/d/1zUh9hte3u2emQ ) в формате (имя клиента, отзыв, дата). Количество отзывов на одной странице - 10шт (max), если отзывов больше - должна быть реализована пагинация страниц в формате (min ... mid... max).
 
-## Goals
+Имя клиента в формате: Иванов И.
 
-- Easy migration from Create React App or Vite
-- As beginner friendly as Create React App
-- Optimized performance compared to Create React App
-- Customizable without ejecting
+Стек:
 
-## Scripts
+- React (class component)
+- Redux
+- Typescript
+- Webpack (или другой сборщик проектов)
 
-- `dev`/`start` - start dev server and open browser
-- `build` - build for production
-- `preview` - locally preview production build
-- `test` - launch test runner
-
-## Inspiration
-
-- [Create React App](https://github.com/facebook/create-react-app/tree/main/packages/cra-template)
-- [Vite](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react)
-- [Vitest](https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib)
+Реализация стилей на усмотрение кандидата.
+Будет плюсом, если не будут использованы сторонние библиотеки!
+Проект с исходным кодом выложить на github или файлообменник, направить ссылку.
