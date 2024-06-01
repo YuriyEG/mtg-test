@@ -2,7 +2,7 @@ import styles from "./Watch.module.css"
 import { Component } from "react"
 
 import getCurrentTime from "../../helper/getCurrentTime"
-import type { IWatchProps, IWatchState } from "./WatchType"
+import type { IWatchProps, IWatchState } from "../../types/WatchType"
 
 class Watch extends Component<{}, IWatchState> {
   constructor(props: IWatchProps) {

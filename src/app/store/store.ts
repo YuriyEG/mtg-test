@@ -12,7 +12,7 @@ const reducer = (
   if (action.type === "TOGGLE_SELECT") {
     return { ...state, openSelect: !state.openSelect }
   }
-  if (action.type === "SELECT_LANG") {
+  if (action.type === "SELECT_LANGUAGE") {
     return { ...state, lang: action.payload }
   }
   return state
