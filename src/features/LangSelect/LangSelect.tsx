@@ -9,15 +9,34 @@ import type { Dispatch } from "@reduxjs/toolkit"
 import { toggleSelect } from "../../app/store/actions"
 import { setLanguage } from "../../app/store/actions"
 
-class LangSelect extends Component<ILangSelector> {
-  languageHandler = e => {
-    this.props.toggleActiveSelect()
-    if (e.target.id) this.props.setLanguage(e.target.id)
+class Option extends Component<{
+  label: string
+  value: string
+  onChange: (value: string) => void
+}> {
+  render() {
+    return (
+      <li
+        id="ru"
+        className={styles.select__option}
+        onClick={() => this.props.onChange(this.props.label)}
+      >
+        {this.props.value}
+      </li>
+    )
   }
+}
+
+class LangSelect extends Component<ILangSelector> {
+  changeHandler = (value: string) => {
+    this.props.toggleActiveSelect()
+    this.props.setLanguage(value)
+  }
+  selectHandler = () => this.props.toggleActiveSelect()
 
   render() {
     return (
-      <div className={styles.select} onClick={this.languageHandler}>
+      <div className={styles.select}>
         <div
           className={
             this.props.state.openSelect
@@ -31,16 +50,13 @@ class LangSelect extends Component<ILangSelector> {
                 ? styles["select__lang-unactive"]
                 : styles.select__lang
             }
+            onClick={this.selectHandler}
           >
             {this.props.state.lang}
           </p>
           <ul>
-            <li value="ru" id="ru" className={styles.select__option}>
-              ru
-            </li>
-            <li value="en" id="en" className={styles.select__option}>
-              en
-            </li>
+            <Option label="ru" value="ru" onChange={this.changeHandler} />
+            <Option label="en" value="en" onChange={this.changeHandler} />
           </ul>
         </div>
       </div>
