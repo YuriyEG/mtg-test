@@ -1,4 +1,4 @@
-import type { State } from "../../app/store"
+import type { State } from "../../app/store/store"
 interface IMain {
   state: State
 }

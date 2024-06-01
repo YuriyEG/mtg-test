@@ -3,11 +3,11 @@ import { Component } from "react"
 import { connect } from "react-redux"
 
 import type { ILangSelector } from "./LangSelectType"
-import type { State } from "../../app/store"
+import type { State } from "../../app/store/store"
 import type { Dispatch } from "@reduxjs/toolkit"
 
-import { toggleSelect } from "../../app/actions"
-import { setLang } from "../../app/actions"
+import { toggleSelect } from "../../app/store/actions"
+import { setLanguage } from "../../app/store/actions"
 
 class LangSelect extends Component<ILangSelector> {
   languageHandler = e => {
@@ -54,7 +54,7 @@ const mapStateToProps = (state: State) => {
 const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
     setLanguage: (lang: string) => {
-      dispatch(setLang(lang))
+      dispatch(setLanguage(lang))
     },
     toggleActiveSelect: () => dispatch(toggleSelect()),
   }
