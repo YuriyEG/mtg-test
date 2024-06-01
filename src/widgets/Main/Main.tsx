@@ -1,5 +1,5 @@
 import styles from "./Main.module.css"
-import { Component } from "react"
+import { Component, ErrorInfo } from "react"
 import { connect } from "react-redux"
 
 import { Pagination } from "antd"
@@ -11,39 +11,30 @@ import type { State } from "../../app/store"
 import Comment from "../../features/Comment"
 import getComments from "../../helper/getComments"
 class Main extends Component<IMain, IMainState> {
-  state = { totalPages: 1, chunk: [], comments: [] }
-
-  componentDidMount(): void {
-    const { lang } = this.props.state
-    const commentList = getComments(lang)
-    this.setState({
-      ...this.state,
-      comments: commentList,
-      chunk: commentList.slice(0, 10),
-      totalPages: Math.ceil(commentList.length / 10),
-    })
-  }
+  state = { page: 1 }
 
   render() {
-    const changePage = (page: number) => {
-      console.log(page)
-      this.setState({
-        ...this.state,
-        chunk: this.state.comments.slice((page - 1) * 10, (page - 1) * 10 + 10),
-      })
-    }
+    const changePage = (page: number) => this.setState({ ...this.state, page })
+
+    const { lang } = this.props.state
+    const comments = getComments(lang)
+    const chunk = comments.slice(
+      (this.state.page - 1) * 10,
+      this.state.page * 10,
+    )
+    const total = comments.length
 
     return (
       <div className={styles.main}>
         <Pagination
           pageSize={10}
           size="small"
-          total={this.state.comments.length}
+          total={total}
           onChange={changePage}
           showSizeChanger={false}
         />
         <ul>
-          {this.state.chunk.map(comment => (
+          {chunk.map(comment => (
             <Comment comment={comment} key={comment.id} />
           ))}
         </ul>
