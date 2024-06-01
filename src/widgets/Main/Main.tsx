@@ -4,8 +4,8 @@ import { connect } from "react-redux"
 
 import { Pagination } from "antd"
 
-import type IMain from "./MainType"
-import type { IMainState } from "./MainType"
+import type IMain from "../../types/MainType"
+import type { IMainState } from "../../types/MainType"
 import type { State } from "../../app/store/store"
 
 import Comment from "../../features/Comment"

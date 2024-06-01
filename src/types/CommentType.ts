@@ -1,4 +1,4 @@
-import type { IComment } from "../../helper/getComments"
+import type { IComment } from "../helper/getComments"
 
 interface ICommentComponent {
   comment: IComment

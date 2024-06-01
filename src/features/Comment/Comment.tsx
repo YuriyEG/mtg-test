@@ -1,6 +1,6 @@
 import styles from "./Comment.module.css"
 
-import type ICommentComponent from "./CommentType"
+import type ICommentComponent from "../../types/CommentType"
 
 import { Component } from "react"
 
