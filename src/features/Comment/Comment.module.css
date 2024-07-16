@@ -15,13 +15,13 @@
   font-family: Nurito, Arial, Helvetica, sans-serif;
 }
 
-.comment__name {
+.name {
   display: block;
   color: gray;
   font-size: 12px;
   text-align: right;
 }
-.comment__review {
+.review {
   width: 100%;
   color: rgb(34, 34, 34);
   font-size: 14px;
@@ -29,7 +29,7 @@
   padding-left: 4px;
 }
 
-.comment__date {
+.date {
   text-align: left;
   font-size: 8px;
   display: block;

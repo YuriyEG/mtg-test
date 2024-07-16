@@ -15,9 +15,9 @@ class Comment extends Component<ICommentComponent> {
     return (
       <li className={styles.comment}>
         <blockquote>
-          <p className={styles.comment__review}>{review}</p>
-          <cite className={styles.comment__name}>{shortName}</cite>
-          <time className={styles.comment__date}>{date}</time>
+          <p className={styles.review}>{review}</p>
+          <cite className={styles.name}>{shortName}</cite>
+          <time className={styles.date}>{date}</time>
         </blockquote>
       </li>
     )

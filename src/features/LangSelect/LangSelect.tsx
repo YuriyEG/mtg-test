@@ -18,7 +18,7 @@ class Option extends Component<{
     return (
       <li
         id="ru"
-        className={styles.select__option}
+        className={styles.option}
         onClick={() => this.props.onChange(this.props.label)}
       >
         {this.props.value}
@@ -38,17 +38,13 @@ class LangSelect extends Component<ILangSelector> {
     return (
       <div className={styles.select}>
         <div
-          className={
-            this.props.state.openSelect
-              ? styles.select__active
-              : styles.select__base
-          }
+          className={this.props.state.openSelect ? styles.active : styles.base}
         >
           <p
             className={
               this.props.state.openSelect
-                ? styles["select__lang-unactive"]
-                : styles.select__lang
+                ? styles["lang-unactive"]
+                : styles.lang
             }
             onClick={this.selectHandler}
           >

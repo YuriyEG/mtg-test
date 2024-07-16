@@ -1,11 +1,11 @@
-import "./App.css"
+import styles from "./App.module.css"
 
 import Header from "../widgets/Header"
 import Main from "../widgets/Main"
 
 const App = () => {
   return (
-    <div className="App">
+    <div className={styles.app}>
       <Header />
       <Main />
     </div>

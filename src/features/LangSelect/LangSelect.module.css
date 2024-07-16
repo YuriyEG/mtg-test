@@ -8,7 +8,7 @@
   user-select: none;
 }
 
-.select__option {
+.option {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -19,7 +19,7 @@
   font-size: 20px;
 }
 
-.select__lang {
+.lang {
   width: 24px;
   height: 24px;
   background-color: rgb(170, 170, 197);
@@ -29,7 +29,7 @@
   font-weight: bold;
 }
 
-.select__lang-unactive {
+.lang-unactive {
   width: 24px;
   height: 24px;
   background-color: rgb(170, 170, 197);
@@ -40,14 +40,14 @@
   transition: color 0.05s ease-in-out;
 }
 
-.select__base {
+.base {
   width: 24px;
   height: 24px;
   overflow: hidden;
   transition: height 0.05s ease-in-out;
 }
 
-.select__active {
+.active {
   width: 24px;
   height: 70px;
   overflow: hidden;
