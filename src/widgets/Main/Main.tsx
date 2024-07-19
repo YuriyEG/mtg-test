@@ -32,6 +32,7 @@ class Main extends Component<IMain, IMainState> {
           total={total}
           onChange={changePage}
           showSizeChanger={false}
+          style={{ marginBottom: "6px" }}
         />
         <ul>
           {chunk.map(comment => (
